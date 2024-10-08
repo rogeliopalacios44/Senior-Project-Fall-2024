@@ -2,7 +2,7 @@
   export default {
     data() {
       return {
-        name: 'insert name here',
+        name: 'insert name here hello',
         status: false,
         value: 2300, 
       };
