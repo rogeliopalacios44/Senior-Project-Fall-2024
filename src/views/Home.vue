@@ -15,12 +15,12 @@
 
 
 <template>
-    <div class="container mt-5 text-center">
+    <div class="container mt-3 text-center">
     <h1>Bootstrap + Vue</h1>
     <h3>Getting started with Uni Deals & Steals</h3>
     <h4>Was testing things here</h4>
     <div class="btn-group">
-      <a href="https://www.youtube.com/watch?v=2mKN6PDZTmc" class="btn btn-primary">CLICK ME!</a>
+      <a href="http://localhost:3000/signup" class="btn btn-primary">Sign Up / Sign In</a>
     </div>
 
     <h4>{{ name }}</h4>
