@@ -15,13 +15,53 @@
 
 
 <template>
+  <nav class="navbar navbar-expand-lg" style="background-color: #00e9ff;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Field of Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Supplies</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">Something else?</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="btn-group">
+    <a href="http://localhost:3000/signup" class="btn btn-dark">Sign Up / Sign In</a>
+  </div>
+  <div class="searchbar" style="float:inline-end;">
+    <div class="input-group mb-3">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <div class="input-group-append">
+        <button class="btn btn-outline-dark" type="sumbit" style="background-color: #00e9ff;">Search</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  
+      
+  
+
     <div class="container mt-3 text-center">
     <h1>Bootstrap + Vue</h1>
     <h3>Getting started with Uni Deals & Steals</h3>
     <h4>Was testing things here</h4>
-    <div class="btn-group">
-      <a href="http://localhost:3000/signup" class="btn btn-primary">Sign Up / Sign In</a>
-    </div>
 
     <h4>{{ name }}</h4>
     <p>{{ value }}</p>
@@ -73,3 +113,10 @@
 
 
 </template>
+
+<style>
+  .searchbar {
+    width: 450px;
+  }
+
+</style>
