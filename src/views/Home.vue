@@ -2,9 +2,23 @@
     export default {
         data() {
             return {
-                name: 'insert name here hello',
+                name1: 'Dummy Book',
+                name2: 'Business Book',
+                name3: 'Database Book',
+                name4: 'Psychology Book',
+                name5: 'Vue Book',
+                name6: 'Calculus Book',
+                name7: 'Literature Book',
+                name8: 'Java Book',
                 status: false,
-                value: 2300, 
+                value1: 19.99, 
+                value2: 39.99,
+                value3: 49.99,
+                value4: 18.99,
+                value5: 45.99,
+                value6: 29.99,
+                value7: 24.99,
+                value8: 35.99,
             };
 
         }
@@ -15,7 +29,7 @@
 
 
 <template>
-  <nav class="navbar navbar-expand-lg" style="background-color: #00e9ff;">
+  <nav class="navbar navbar-expand-lg" style="background-color: #7df4ff;">
     <div class="container-fluid">
       <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,69 +61,62 @@
     <div class="input-group mb-3">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <div class="input-group-append">
-        <button class="btn btn-outline-dark" type="sumbit" style="background-color: #00e9ff;">Search</button>
+        <button class="btn btn-outline-dark" type="sumbit" style="background-color: #7df4ff;">Search</button>
       </div>
     </div>
   </div>
   <br>
   <br>
 
-  
-      
-  
-
-    <div class="container mt-3 text-center">
-    <h1>Bootstrap + Vue</h1>
-    <h3>Getting started with Uni Deals & Steals</h3>
-    <h4>Was testing things here</h4>
-
-    <h4>{{ name }}</h4>
-    <p>{{ value }}</p>
-    <p v-if="status">User is active</p>
-    <!-- How to make an else if statement <p v-else-if="status">User is active</p> -->
-    <p v-else>User is inactive</p>
-    <p v-if="value % 2 === 0">Value is even</p>
-    <p v-else=>Value is odd</p>
+  <br>
+  <div class="container-md" style="display: flex;justify-content: space-evenly;">
+      <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://m.media-amazon.com/images/I/81lEZsk5bZL._AC_UF1000,1000_QL80_.jpg">
+      <img src="https://m.media-amazon.com/images/I/81lEZsk5bZL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name1 }} ${{ value1 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://open.umn.edu/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NDQ1NCwicHVyIjoiYmxvYl9pZCJ9fQ==--9afd76bc7e0636daedb59cb16d185fdedb0e3743/Screen%20Shot%202023-01-13%20at%209.56.14%20AM.png" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name2 }} ${{ value2 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://m.media-amazon.com/images/I/61CUat-cJJL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name3 }} ${{ value3 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://cdn11.bigcommerce.com/s-hv5k6k5hxc/images/stencil/800x800/products/727/2580/SPS08SEB__11015.1619566377.jpg?c=1" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name4 }} ${{ value4 }}</figcaption></a>
+    </figure>
   </div>
 
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://snoopn4pnuts.com/cdn/shop/products/halloweenshirt774.jpg?v=1579574780" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images.squarespace-cdn.com/content/v1/617429993039ec793bfb3450/48781120-96dd-4d21-88a5-1756269b7e5b/MV5BZjBlNGFmN2ItODg1NC00YzQ2LTg5NzAtZDk5NjlhOTc4Njc3L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAzOTQ2ODU%40._V1_.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/pumpkin-meme-halloween-1626049701.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <br>
+
+  <div class="container-md" style="display: flex;justify-content: space-evenly;">
+      <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://m.media-amazon.com/images/I/515z2ZyvdQL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name5 }} ${{ value5 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://m.media-amazon.com/images/I/61LYUuJD5SL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name6 }} ${{ value6 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://m.media-amazon.com/images/I/91mMhZp5jkL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name7 }} ${{ value7 }}</figcaption></a>
+    </figure>
+    <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
+        <a href="https://media.tenor.com/4ssu5o9Myp8AAAAM/lilo-and-stitch-disney.gif">
+      <img src="https://m.media-amazon.com/images/I/61nWFMooc8L._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{ name8 }} ${{ value8 }}</figcaption></a>
+    </figure>
   </div>
 
-  <div class="dropdown">
-    <button
-      class="btn btn-secondary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton1"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Check Bootstrap
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-  </div>
 
 
 </template>
