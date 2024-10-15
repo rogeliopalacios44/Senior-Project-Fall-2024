@@ -26,7 +26,7 @@
 
     <div class="w-100 p-4 d-flex align-items-center justify-content-center"
     style=" height: 750px;">
-            <div class="container mt-3 text-start" style="background-color: #7df4ff;height: 300px;border-radius: 30px;padding-top: 18px">
+            <div class="container mt-3 text-start" style="background-color: #7df4ff;height: 300px;border-radius: 30px;padding-top: 18px;width:750px;">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -37,7 +37,7 @@
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
             <br>
-            <button type="button" class="btn btn-dark">Sign Up</button>
+            <button type="button" class="btn btn-dark">Register</button>
             <a href="http://localhost:3000/signin" class="btn btn-active">Sign In</a>
         </div>
 

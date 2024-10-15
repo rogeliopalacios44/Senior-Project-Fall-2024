@@ -25,7 +25,7 @@
 </nav>
     <div class="w-100 p-4 d-flex align-items-center justify-content-center"
     style=" height: 750px;">
-    <div class="container mt-3 text-start" style="background-color: #7df4ff;height: 300px;border-radius: 30px;padding-top: 35px">
+    <div class="container mt-3 text-start" style="background-color: #7df4ff;height: 300px;border-radius: 30px;padding-top: 35px;width:750px;">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1">

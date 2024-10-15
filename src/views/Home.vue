@@ -37,9 +37,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#">Field of Study</a>
           </li>
@@ -47,7 +44,7 @@
             <a class="nav-link" href="#">Supplies</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Something else?</a>
+            <a class="nav-link" href="http://localhost:3000/anotherView">Something else?</a>
           </li>
         </ul>
       </div>
@@ -55,13 +52,13 @@
   </nav>
 
   <div class="btn-group">
-    <a href="http://localhost:3000/signup" class="btn btn-dark">Sign Up / Sign In</a>
+    <a href="http://localhost:3000/signup" class="btn btn-dark">Login / Register</a>
   </div>
   <div class="searchbar" style="float:inline-end;">
     <div class="input-group mb-3">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <div class="input-group-append">
-        <button class="btn btn-outline-dark" type="sumbit" style="background-color: #7df4ff;">Search</button>
+        <button class="btn btn-outline-dark" type="submit" style="background-color: #7df4ff;">Search</button>
       </div>
     </div>
   </div>
@@ -71,7 +68,7 @@
   <br>
   <div class="container-md" style="display: flex;justify-content: space-evenly;">
       <figure class="figure" style="width: 250px;border-style: solid;border-width: 1px;border-radius: 8px;">
-        <a href="https://m.media-amazon.com/images/I/81lEZsk5bZL._AC_UF1000,1000_QL80_.jpg">
+        <a href="http://localhost:3000/book-1">
       <img src="https://m.media-amazon.com/images/I/81lEZsk5bZL._AC_UF1000,1000_QL80_.jpg" class="figure-img img-fluid rounded">
       <figcaption class="figure-caption">{{ name1 }} ${{ value1 }}</figcaption></a>
     </figure>
