@@ -2,6 +2,7 @@
     export default {
         data() {
             return {
+                // comment to test githubs branch ruleset
                 // dont know how to get data from home.vue so just hard coded it for now
                 title1: 'Beginning Programming for Dummies Book',
                 value1: 19.99
@@ -88,7 +89,7 @@
 
     <div class="card map-card">
       <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.5650012733713!2d-98.17401580000002!3d26.308198299999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a24b15a78c4d%3A0x2cdc1bf01639f10c!2sThe%20University%20of%20Texas%20Rio%20Grande%20Valley!5e0!3m2!1sen!2sus!4v1729028705558!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.5650012733713!2d-98.17401580000002!3d26.308198299999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a24b15a78c4d%3A0x2cdc1bf01639f10c!2sThe%20University%20of%20Texas%20Rio%20Grande%20Valley!5e0!3m2!1sen!2sus!4v1729028705558!5m2!1sen!2sus" width="600" height="450" style="border:0;"loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <div class="card-body closed px-0">
