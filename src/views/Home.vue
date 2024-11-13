@@ -89,7 +89,7 @@ export default {
       books: [
         { id: 1, title: "Calculus 101", image: "https://m.media-amazon.com/images/I/61LYUuJD5SL._AC_UF1000,1000_QL80_.jpg", price: 50, category: "Math" },
         { id: 2, title: "Physics for Engineers", image: "https://m.media-amazon.com/images/I/61CUat-cJJL._AC_UF1000,1000_QL80_.jpg", price: 75, category: "Science" },
-        { id: 3, title: "American Literature", image: "https://m.media-amazon.com/images/I/81lEZsk5bZL._AC_UF1000,1000_QL80_.jpg", price: 45, category: "Literature" },
+        { id: 3, title: "American Literature", image: "https://rkihgxoyygkqodjbrvxw.supabase.co/storage/v1/object/sign/book_pictures/britt-literature.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJib29rX3BpY3R1cmVzL2JyaXR0LWxpdGVyYXR1cmUuanBnIiwiaWF0IjoxNzMwNzU4NDIzLCJleHAiOjE3NjIyOTQ0MjN9.ol4p9ZpJAYtncurEnIeogqJ7L8sAr37vl5JkLwNWZ-s&t=2024-11-04T22%3A13%3A43.762Z", price: 45, category: "Literature" }, //testing out img link from supabase storage bucket
         { id: 4, title: "Business Essentials", image: "https://cdn11.bigcommerce.com/s-hv5k6k5hxc/images/stencil/800x800/products/727/2580/SPS08SEB__11015.1619566377.jpg?c=1", price: 39.99, category: "Business" },
         { id: 5, title: "Psychology Basics", image: "https://m.media-amazon.com/images/I/515z2ZyvdQL._AC_UF1000,1000_QL80_.jpg", price: 18.99, category: "Psychology" },
         { id: 6, title: "Vue.js Guide", image: "https://m.media-amazon.com/images/I/61nWFMooc8L._AC_UF1000,1000_QL80_.jpg", price: 45.99, category: "Technology" },
