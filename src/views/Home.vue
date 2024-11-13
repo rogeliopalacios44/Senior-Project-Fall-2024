@@ -16,7 +16,7 @@
               <a class="nav-link" href="#">Supplies</a>
             </li>
             <li>
-              <a class="nav-link" href="http://localhost:3000/anotherView">Something else?</a>
+              <a class="nav-link" href="https://uni-deals-and-steals.onrender.com/anotherView">Something else?</a>
             </li>
           </ul>
         </div>
