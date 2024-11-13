@@ -58,7 +58,7 @@
             <input v-model="searchQuery" @input="applyFilter" placeholder="Search by book title" />
           </div>
           <div class="auth-buttons">
-            <a href="http://localhost:3000/signup" class="btn btn-dark">Login / Register</a>
+            <a href="https://uni-deals-and-steals.onrender.com//signup" class="btn btn-dark">Login / Register</a>
           </div>
         </div>
 
