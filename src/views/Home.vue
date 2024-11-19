@@ -1,7 +1,7 @@
-<<template>
+<template>
   <div>
     <!-- Navigation bar and search section -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #7df4ff;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #0a9dc1;">
       <div class="container-fluid">
         <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,9 +14,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Supplies</a>
-            </li>
-            <li>
-              <a class="nav-link" href="https://uni-deals-and-steals.onrender.com/anotherView">Something else?</a>
             </li>
           </ul>
         </div>
@@ -47,7 +44,14 @@
               <input type="number" v-model="maxPriceInput" @input="applyFilter" placeholder="Max" />
             </div>
           </div>
+
+          <!-- Create Listing button -->
+          <div class="create-button">
+            <a type="button" class="btn btn-dark" href="http://localhost:3000/createlisting" >Create Listing</a>
+          </div>
+              
         </div>
+
       </div>
 
       <!-- Main content area -->
@@ -58,7 +62,7 @@
             <input v-model="searchQuery" @input="applyFilter" placeholder="Search by book title" />
           </div>
           <div class="auth-buttons">
-            <a href="https://uni-deals-and-steals.onrender.com//signup" class="btn btn-dark">Login / Register</a>
+            <a href="https://uni-deals-and-steals.onrender.com/signup" class="btn btn-dark">Login / Register</a>
           </div>
         </div>
 
