@@ -1,5 +1,33 @@
+<script setup>
+import { ref } from "vue";
+import router from "../router/index"
+import { supabase } from "../../supabase";
+
+
+const email = ref("");
+const password = ref("");
+
+const singIN = async () => {
+  try{
+      const {error} = await supabase.auth.signInWithPassword ({
+        email: email.value,
+        password: password.value,
+    })
+    if (error) throw error
+    router.push("/")
+    //alert('Check your email for the login link')
+  } catch (error){
+    if (error instanceof Error){
+      alert(error.message)
+      
+    }
+  }
+};
+
+</script>
+
 <template>
-    <nav class="navbar navbar-expand-lg" style="background-color: #7df4ff;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #0a9dc1;">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,17 +53,17 @@
 </nav>
     <div class="w-100 p-4 d-flex align-items-center justify-content-center"
     style=" height: 750px;">
-    <div class="container mt-3 text-start" style="background-color: #7df4ff;height: 300px;border-radius: 30px;padding-top: 35px;width:750px;">
+    <div class="container mt-3 text-start" style="background-color: #0a9dc1;height: 300px;border-radius: 30px;padding-top: 35px;width:750px;">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1">
+                <input type="email" class="form-control" id="exampleFormControlInput1" v-model="email">
             </div>
             <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" v-model="password">
             <div id="passwordHelpBlock" class="form-text">
             </div>
             <br>
-            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSW2kvr4l-GMfPhxXud4loYMg1vTIo7McXhw&s" class="btn btn-dark">Sign In</a>
+            <button @click="singIN" class="btn btn-dark">Sign In</button>
         </div>
     </div>
 </template>
