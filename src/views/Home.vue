@@ -1,7 +1,45 @@
+<script>
+export default {
+  data() {
+    return {
+      // Data from both code snippets merged
+      categories: ["Math", "Science", "Literature", "History", "Economics", "Business", "Psychology", "Technology"],
+      selectedCategories: [],
+      searchQuery: "",
+      minPriceInput: 0,
+      maxPriceInput: 100,
+      books: [
+        { id: 1, title: "Calculus 101", image: "https://m.media-amazon.com/images/I/61LYUuJD5SL._AC_UF1000,1000_QL80_.jpg", price: 50, category: "Math" },
+        { id: 2, title: "Database Management Systems", image: "https://m.media-amazon.com/images/I/61CUat-cJJL._AC_UF1000,1000_QL80_.jpg", price: 75, category: "Technology" },
+        { id: 3, title: "", image: "https://rkihgxoyygkqodjbrvxw.supabase.co/storage/v1/object/sign/book_pictures/britt-literature.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJib29rX3BpY3R1cmVzL2JyaXR0LWxpdGVyYXR1cmUuanBnIiwiaWF0IjoxNzMwNzU4NDIzLCJleHAiOjE3NjIyOTQ0MjN9.ol4p9ZpJAYtncurEnIeogqJ7L8sAr37vl5JkLwNWZ-s&t=2024-11-04T22%3A13%3A43.762Z", price: 45, category: "Literature" }, //testing out img link from supabase storage bucket
+        { id: 4, title: "Psychology", image: "https://cdn11.bigcommerce.com/s-hv5k6k5hxc/images/stencil/800x800/products/727/2580/SPS08SEB__11015.1619566377.jpg?c=1", price: 39.99, category: "Psychology" },
+        { id: 5, title: "The Complete Vue.js Developer's Guide", image: "https://m.media-amazon.com/images/I/515z2ZyvdQL._AC_UF1000,1000_QL80_.jpg", price: 28.99, category: "Technology" },
+        { id: 6, title: "Core Java Volume I: Fundamentals", image: "https://m.media-amazon.com/images/I/61nWFMooc8L._AC_UF1000,1000_QL80_.jpg", price: 45.99, category: "Technology" },
+      ],
+    };
+  },
+  computed: {
+    filteredBooks() {
+      return this.books.filter(book => {
+        const matchesCategory = !this.selectedCategories.length || this.selectedCategories.includes(book.category);
+        const matchesPrice = book.price >= this.minPriceInput && book.price <= this.maxPriceInput;
+        const matchesSearch = book.title.toLowerCase().includes(this.searchQuery.toLowerCase());
+        return matchesCategory && matchesPrice && matchesSearch;
+      });
+    }
+  },
+  methods: {
+    applyFilter() {
+      this.filteredBooks;
+    },
+  }
+};
+</script>
+
 <template>
   <div>
     <!-- Navigation bar and search section -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #0a9dc1;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #f05023;">
       <div class="container-fluid">
         <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +51,7 @@
               <a class="nav-link" href="#">Field of Study</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Supplies</a>
+              <a class="nav-link" href="http://localhost:3000/account">Supplies</a>
             </li>
           </ul>
         </div>
@@ -62,7 +100,7 @@
             <input v-model="searchQuery" @input="applyFilter" placeholder="Search by book title" />
           </div>
           <div class="auth-buttons">
-            <a href="https://uni-deals-and-steals.onrender.com/signup" class="btn btn-dark">Login / Register</a>
+            <a href="http://localhost:3000/signup" class="btn btn-dark">Login / Register</a>
           </div>
         </div>
 
@@ -80,43 +118,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      // Data from both code snippets merged
-      categories: ["Math", "Science", "Literature", "History", "Economics", "Business", "Psychology", "Technology"],
-      selectedCategories: [],
-      searchQuery: "",
-      minPriceInput: 0,
-      maxPriceInput: 100,
-      books: [
-        { id: 1, title: "Calculus 101", image: "https://m.media-amazon.com/images/I/61LYUuJD5SL._AC_UF1000,1000_QL80_.jpg", price: 50, category: "Math" },
-        { id: 2, title: "Physics for Engineers", image: "https://m.media-amazon.com/images/I/61CUat-cJJL._AC_UF1000,1000_QL80_.jpg", price: 75, category: "Science" },
-        { id: 3, title: "American Literature", image: "https://rkihgxoyygkqodjbrvxw.supabase.co/storage/v1/object/sign/book_pictures/britt-literature.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJib29rX3BpY3R1cmVzL2JyaXR0LWxpdGVyYXR1cmUuanBnIiwiaWF0IjoxNzMwNzU4NDIzLCJleHAiOjE3NjIyOTQ0MjN9.ol4p9ZpJAYtncurEnIeogqJ7L8sAr37vl5JkLwNWZ-s&t=2024-11-04T22%3A13%3A43.762Z", price: 45, category: "Literature" }, //testing out img link from supabase storage bucket
-        { id: 4, title: "Business Essentials", image: "https://cdn11.bigcommerce.com/s-hv5k6k5hxc/images/stencil/800x800/products/727/2580/SPS08SEB__11015.1619566377.jpg?c=1", price: 39.99, category: "Business" },
-        { id: 5, title: "Psychology Basics", image: "https://m.media-amazon.com/images/I/515z2ZyvdQL._AC_UF1000,1000_QL80_.jpg", price: 18.99, category: "Psychology" },
-        { id: 6, title: "Vue.js Guide", image: "https://m.media-amazon.com/images/I/61nWFMooc8L._AC_UF1000,1000_QL80_.jpg", price: 45.99, category: "Technology" },
-      ],
-    };
-  },
-  computed: {
-    filteredBooks() {
-      return this.books.filter(book => {
-        const matchesCategory = !this.selectedCategories.length || this.selectedCategories.includes(book.category);
-        const matchesPrice = book.price >= this.minPriceInput && book.price <= this.maxPriceInput;
-        const matchesSearch = book.title.toLowerCase().includes(this.searchQuery.toLowerCase());
-        return matchesCategory && matchesPrice && matchesSearch;
-      });
-    }
-  },
-  methods: {
-    applyFilter() {
-      this.filteredBooks;
-    },
-  }
-};
-</script>
+
 
 <style>
 /* Sidebar styles */

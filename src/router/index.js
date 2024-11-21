@@ -5,6 +5,7 @@ import SignUp from '@/views/SignUp.vue';
 import SignIn from '@/views/SignIn.vue';
 import Book1 from '@/views/Book1.vue';
 import CreateListing from '@/views/CreateListing.vue';
+import Account from '@/views/Account.vue';
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/createlisting',
         name: 'CreateListing',
         component: CreateListing
+    },
+    {
+        path: '/account',
+        name: 'Account',
+        component: Account
     }
     
 ]
