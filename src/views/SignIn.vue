@@ -27,7 +27,7 @@ const singIN = async () => {
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg" style="background-color: #0a9dc1;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #f05023;">
   <div class="container-fluid">
     <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@ const singIN = async () => {
 </nav>
     <div class="w-100 p-4 d-flex align-items-center justify-content-center"
     style=" height: 750px;">
-    <div class="container mt-3 text-start" style="background-color: #0a9dc1;height: 300px;border-radius: 30px;padding-top: 35px;width:750px;">
+    <div class="container mt-3 text-start" style="background-color: #f05023;height: 280px;border-radius: 30px;padding-top: 35px;width:750px;">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" v-model="email">
