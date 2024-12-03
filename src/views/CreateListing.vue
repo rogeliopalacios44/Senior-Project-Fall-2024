@@ -3,6 +3,8 @@ import {ref, computed} from "vue"
 import { supabase } from '../../supabase';
 // import { getServiceSupabase } from '../../supabase';
 
+const listing_title = ref('')
+const listing_descrip = ref('')
 const newBook = ref('')
 const newISBN10 = ref()
 const newISBN13 = ref('')
@@ -48,6 +50,20 @@ const uploadImage = async () => {
     }
   }
 }
+const addListingData = async () => {
+  // const supabase = getServiceSupabase();
+  const { data, error } = await supabase
+    .from('listings')
+    .insert([
+      {listing_title: listing_title.value, listing_description: listing_descrip.value}
+    ]);
+
+  if (error) {
+    console.error('Error inserting data:', error);
+  } else {
+    console.log('Data inserted:', data);
+  }
+}
 </script>
 
 <template>
@@ -77,6 +93,17 @@ const uploadImage = async () => {
       <h2>Create Listing</h2>
   
       <form @submit.prevent="createListing">
+        <!-- Listing Title -->
+        <div class="form-group">
+          <label for="title">Listing Title</label>
+          <input type="text" id="title" v-model="listing_title" placeholder="Enter listing title" required />
+        </div>
+        <!-- Listing Description -->
+        <div class="form-group">
+          <label for="title">Listing Description</label>
+          <br>
+          <textarea style= "width: 560px; height: 200px;"type="text" id="title" v-model="listing_descrip" placeholder="Enter listing description" required />
+        </div>
         <!-- Book Title -->
         <div class="form-group">
           <label for="title">Book Title</label>
@@ -107,13 +134,6 @@ const uploadImage = async () => {
           <input type="number" id="price" v-model="newBookPrice" placeholder="Enter price" min="0" required />
         </div>
   
-        <!-- Location 
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" id="location" v-model="newBook.location" placeholder="Enter location" required />
-        </div>
-        -->
-  
         <!-- Category -->
         <div class="form-group">
           <label for="category">Category</label>
@@ -130,9 +150,14 @@ const uploadImage = async () => {
           <label for="image">Upload Book Image</label>
           <input type="file" @change="handleFileChange" />
         </div>
+
+        <!-- going to need to figure out how to display form boxes for book info again after add another book button is pressed 
+             i was thinking of just using an if statement with the divs above to reshow the book info again at least 3 times, it 
+             will look messy but thats one it can work -->
+        <button style="margin-top: 25px; margin-bottom: 50px; background-color: #f05023;">Add another book</button>
   
         <!-- Submit Button -->
-        <button @click="addData(); uploadImage()">Submit</button>
+        <button @click="addData(); uploadImage(); addListingData()">Submit</button>
       </form>
     </div>
   
