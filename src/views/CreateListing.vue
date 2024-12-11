@@ -10,7 +10,7 @@ const newISBN10 = ref()
 const newISBN13 = ref('')
 const newBookCategory = ref('')
 const newAuthor = ref('')
-const newBookPrice = ref()
+const newBookPrice = ref(0.00)
 const file = ref()
 
 const categories = ["Math", "Science", "Literature", "History", "Economics", "Technology"]
@@ -72,7 +72,7 @@ const newISBN10_2 = ref()
 const newISBN13_2 = ref('')
 const newBookCategory2 = ref('')
 const newAuthor2 = ref('')
-const newBookPrice2 = ref()
+const newBookPrice2 = ref(0.00)
 const file2 = ref()
 const isVisible = ref(true);
 const isVisible2 = ref(true);
@@ -110,7 +110,7 @@ const newISBN10_3 = ref()
 const newISBN13_3 = ref('')
 const newBookCategory3 = ref('')
 const newAuthor3 = ref('')
-const newBookPrice3 = ref()
+const newBookPrice3 = ref(0.00)
 const file3 = ref()
 
 const uploadImage3 = async () => {
@@ -223,7 +223,7 @@ const handleFileChange3 = (event) => {
         <!-- going to need to figure out how to display form boxes for book info again after add another book button is pressed 
              i was thinking of just using an if statement with the divs above to reshow the book info again at least 3 times, it 
              will look messy but thats one it can work -->
-        <button style="margin-top: 25px; margin-bottom: 50px; background-color: #f05023;" @click="isVisible = !isVisible; isVisible ? (newBook2 = '', newAuthor2 = '', newISBN10_2 = null, newISBN13_2 = '', newBookPrice2 = null, newBookCategory2 = '') : null">{{ isVisible ? 'Add another book' : 'Remove Book' }}</button>
+        <button style="margin-top: 25px; margin-bottom: 50px; background-color: #f05023;" @click="isVisible = !isVisible; isVisible ? (newBook2 = '', newAuthor2 = '', newISBN10_2 = null, newISBN13_2 = '', newBookPrice2 = 0.00, newBookCategory2 = '') : null">{{ isVisible ? 'Add another book' : 'Remove Book' }}</button>
         <div v-show="!isVisible">
 
           <!-- Book Title2 -->
@@ -274,7 +274,7 @@ const handleFileChange3 = (event) => {
         </div>
 
         <!-- Button2 -->
-        <button style="margin-top: 25px; margin-bottom: 50px; background-color: #f05023;" @click="isVisible2 = !isVisible2; isVisible2 ? (newBook3 = '', newAuthor3 = '', newISBN10_3 = null, newISBN13_3 = '', newBookPrice3 = null, newBookCategory3 = '') : null">{{ isVisible2 ? 'Add another book' : 'Remove Book' }}</button>
+        <button style="margin-top: 25px; margin-bottom: 50px; background-color: #f05023;" @click="isVisible2 = !isVisible2; isVisible2 ? (newBook3 = '', newAuthor3 = '', newISBN10_3 = null, newISBN13_3 = '', newBookPrice3 = 0.00, newBookCategory3 = '') : null">{{ isVisible2 ? 'Add another book' : 'Remove Book' }}</button>
         <div v-show="!isVisible2">
 
           <!-- Book Title3 -->
