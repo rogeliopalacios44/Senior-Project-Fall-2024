@@ -86,9 +86,9 @@
                   <figure v-for="book in paginatedBooks"
                           :key="book.book_id"
                           class="figure"
-                          style="width: 250px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center;"
+                          style="width: 250px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center; cursor: pointer;"
                           @click="goToBookDetails(book.book_id)">
-                      <img :src="book.book_img" class="figure-img img-fluid rounded" />
+                      <img :src="book.book_img" class="figure-img img-fluid rounded" alt="Book Cover" />
                       <figcaption class="figure-caption">
                           {{ book.book_name }} - ${{ book.book_price.toFixed(2) }}
                       </figcaption>
@@ -122,8 +122,7 @@
   import { createClient } from "@supabase/supabase-js";
 
   const supabaseUrl = "https://rkihgxoyygkqodjbrvxw.supabase.co";
-  const supabaseKey =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJraWhneG95eWdrcW9kamJydnh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1NjU3ODgsImV4cCI6MjA0NTE0MTc4OH0.fNBZJNb_kq0f-z_zGv1GEfmhL0ciJY5AG8JHMeQgxRE";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJraWhneG95eWdrcW9kamJydnh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1NjU3ODgsImV4cCI6MjA0NTE0MTc4OH0.fNBZJNb_kq0f-z_zGv1GEfmhL0ciJY5AG8JHMeQgxRE";
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   export default {
@@ -151,9 +150,7 @@
           async fetchBooks() {
               const { data, error } = await supabase
                   .from("books")
-                  .select(
-                      "book_id, book_name, book_category, author_names, book_img, book_price"
-                  )
+                  .select("book_id, book_name, book_category, author_names, book_img, book_price")
                   .order("book_id", { ascending: false });
               if (error) console.error(error);
               else this.books = this.filteredBooks = data;
@@ -176,14 +173,8 @@
           searchBooks() {
               this.filterBooks();
           },
-          goToCreateListing() {
-              this.$router.push({ name: "create-listing" });
-          },
-          goToLogin() {
-              this.$router.push({ name: "login" });
-          },
           goToBookDetails(bookId) {
-              this.$router.push({ name: "book-details", params: { id: bookId } });
+              this.$router.push({ name: "another-view", params: { id: bookId } });
           },
           nextPage() {
               this.currentPage++;
@@ -227,14 +218,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
   }
 
   .item-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      margin-top: 20px; 
+      margin-top: 20px;
   }
 
   .pagination {
@@ -245,11 +236,10 @@
       margin-top: 20px;
   }
 
-
   .page-number {
       font-weight: bold;
       font-size: 18px;
-      margin-bottom: 10px; 
+      margin-bottom: 10px;
   }
 
   .arrow-buttons {

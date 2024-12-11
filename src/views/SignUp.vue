@@ -12,6 +12,8 @@ import { supabase } from "../../supabase";
 
 const email = ref("");
 const password = ref("");
+const displayname = ref("");
+const phonenumber = ref("");
 
 const singUP = async () => {
   try{
@@ -30,12 +32,26 @@ const singUP = async () => {
     }
   }
 };
+const addData = async () => {
+  // const supabase = getServiceSupabase();
+  const { data, error } = await supabase
+    .from('users')
+    .insert([
+      {username: displayname.value, user_email: email.value, user_phone: phonenumber.value}
+    ]);
+
+  if (error) {
+    console.error('Error inserting data:', error);
+  } else {
+    console.log('Data inserted:', data);
+  }
+};
 
 </script>
 <template>
     <nav class="navbar navbar-expand-lg" style="background-color: #f05023;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="http://localhost:3000/">Uni Deals & Steals</a>
+    <a class="navbar-brand" href="http://localhost:3000/">University Marketplace</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -60,7 +76,7 @@ const singUP = async () => {
 
     <div class="w-100 p-4 d-flex align-items-center justify-content-center"
     style=" height: 750px;">
-            <div class="container mt-3 text-start" style="background-color: #f05023;height: 340px;border-radius: 30px;padding-top: 18px;width:750px;">
+            <div class="container mt-3 text-start" style="background-color: #f05023;height: 500px;border-radius: 30px;padding-top: 18px;width:750px;">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" v-model="email">
@@ -70,8 +86,18 @@ const singUP = async () => {
                 <div id="passwordHelpBlock" class="form-text">
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
+                <label for="exampleFormControlInput1" class="form-label">Display Name</label>
+                <input type="email" id="inputPassword5" class="form-control" v-model="displayname">
+                <div class="form-text">
+                
+                </div>
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input type="email" id="inputPassword5" class="form-control" v-model="phonenumber">
+                <div class="form-text">
+                
+                </div>
             <br>
-            <button type="button" class="btn btn-dark" @click="singUP" style="margin-bottom: 10px;">Register</button>
+            <button type="button" class="btn btn-dark" @click="singUP(); addData();" style="margin-bottom: 10px;">Register</button>
             <br>
             <button type="button" class="btn btn-dark"><a href="http://localhost:3000/signin">Sign In</a></button>
         </div>
